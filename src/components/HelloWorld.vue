@@ -4,16 +4,17 @@
   <p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
 </template>
 
-<script>
-export default {
-  name: 'HelloWorld',
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+
+@Options({
   props: {
-    msg: String
-  },
-  data() {
-    return {
-      count: 0
-    }
+    msg: String,
   }
+})
+export default class HelloWorld extends Vue {
+  msg!: String;
+
+  private count = 0;
 }
 </script>
